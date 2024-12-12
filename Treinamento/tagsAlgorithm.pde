@@ -51,11 +51,13 @@ void setup(){
 
         erro = desejado - saida;
 
-        if (erro != 0) { 
-          w1 = w1 + TA * erro * x;
-          w2 = w2 + TA * erro * y;
-          w3 = w3 + TA * erro * z;
-        }
+      if (erro != 0) { 
+    w1 = w1 + TA * erro * x;
+    w2 = w2 + TA * erro * y;
+    w3 = w3 + TA * erro * z;
+    bias = bias + TA * erro;
+}
+
 
         erroQuadraticoMedio += erro * erro;
       }

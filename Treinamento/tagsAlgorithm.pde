@@ -67,7 +67,7 @@ void setup(){
     erroQuadraticoMedio /= min(linhas.length, 4096);
 
     println("Results for TA = " + TA + ":");
-    println("float w1 = " + w1 + "; float w2 = " + w2 + "; float w3 = " + w3 + ";");
+    println("float w1 = " + w1 + "; float w2 = " + w2 + "; float w3 = " + w3 + ";" + "bias = " + bias+ ";");
     println("Quadratic Mean Error == " + erroQuadraticoMedio);
     println("---------------------------------------------------");
   }

@@ -11,7 +11,7 @@ void setup(){
   Float w2 = 127.0;
   Float w3 = 127.0;
   Float s = 0.0;
-  int epocas = 100;
+  int epocas = 500;
   int count = 0;
   String[] linhas;
   color co;
@@ -33,9 +33,10 @@ void setup(){
     w2 = 127.0;
     w3 = 127.0;
     bias = 0.0;
-    erroQuadraticoMedio = 0;
     int countInner = 0;
     while(countInner < epocas){
+          erroQuadraticoMedio = 0;
+
       for (int i = 0; i < min(linhas.length, 4096); i++){
         String[] values = linhas[i].split("\\s+");
         x = Float.parseFloat(values[0]);
@@ -67,7 +68,7 @@ void setup(){
     erroQuadraticoMedio /= min(linhas.length, 4096);
 
     println("Results for TA = " + TA + ":");
-    println("float w1 = " + w1 + "; float w2 = " + w2 + "; float w3 = " + w3 + ";" + "bias = " + bias+ ";");
+    println("float w1 = " + w1 + "; float w2 = " + w2 + "; float w3 = " + w3 + ";" + "float bias = " + bias+ ";");
     println("Quadratic Mean Error == " + erroQuadraticoMedio);
     println("---------------------------------------------------");
   }

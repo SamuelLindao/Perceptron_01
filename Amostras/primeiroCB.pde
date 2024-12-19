@@ -10,7 +10,7 @@ void setup() {
   size(400,400);
   img = loadImage("img.png");
 
-  output = createWriter("C:/Users/lacer/OneDrive/Desktop/FirstPercep/Treinamento/processingSaveData.txt");
+  output = createWriter("C:/Users/lacer/OneDrive/Desktop/FirstPercep/Perceptron_01/Treinamento/processingSaveData.txt");
 
   color c;
   float r = 0, g = 255, b = 255;
@@ -19,7 +19,7 @@ void setup() {
   int contn = 0;
   float dv =0;
   int cont = 0;
-  
+  int distPar = 16;
   for(int x=0 ; x < img.width * img.height;x++){
     if(cont == 4096) break;
     int i = (int)random(img.width);
@@ -29,9 +29,9 @@ void setup() {
       g = green(c);
       b = blue(c);
        
-      dv = dist(r, g, b, 5, 96, 181); 
+      dv = dist(r, g, b, 0, 6,23); 
      // print(dv + "\n");
-        if(dv < 128 && contn < 2048)
+        if(dv < distPar && contn < 2048)
         {
           contn++;
           output.println(r+"\t"+g+"\t"+b+"\t-1");
@@ -39,7 +39,7 @@ void setup() {
 
         }
         
-        if(dv >= 128 && contp < 2048)
+        if(dv >= distPar && contp < 2048)
         {
           contp++;
            output.println(r+"\t"+g+"\t"+b+"\t+1");

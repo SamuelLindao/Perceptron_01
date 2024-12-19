@@ -11,7 +11,7 @@ void setup(){
   float r, g, b;
 
 
-float w1 = 149.3903; float w2 = -172.40575; float w3 = -10.99959;float bias = 1031.2423;
+float w1 = 0.8798642; float w2 = -0.14003065; float w3 = -0.6399693;float bias = -24.040000863;
   for(int i=0; i<img.width; i++){
     for(int j = 0; j < img.height; j++){
       co = img.get(i,j);
